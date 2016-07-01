@@ -15,3 +15,4 @@ log
 *.pkl
 db_settings.py
 node_modules
+.tern-port
