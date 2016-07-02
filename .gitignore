@@ -8,7 +8,7 @@
 *.pyc
 .idea
 # don't commit log files
-log
+*.log
 
 # ignore uploaded data
 *.h5
