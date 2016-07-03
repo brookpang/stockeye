@@ -13,6 +13,7 @@
 # ignore uploaded data
 *.h5
 *.pkl
+conf.js
 db_settings.py
 node_modules
 .tern-port
