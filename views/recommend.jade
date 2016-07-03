@@ -1,6 +1,18 @@
 extends layout
 
 block content
-  h1= name
-  p Welcome to #{code}
-  p Welcome to #{name}
+  .page-header
+    h1= '今日推荐'
+  .row
+   .col-md-6
+    table.table 
+      thead
+        th='代码'
+        th='名称'
+        th='预测值'
+      tbody
+        each row in rows
+          tr
+            td=row.code
+            td=row.name
+            td=row.predict

@@ -5,22 +5,11 @@ var dbselect = require('../db/db').dbselect;
 /* GET recommend page. */
 var sqlrecommend = 'select c_yearmonthday,code,name,predict from predict_head order by c_yearmonthday desc';
 router.get('/', function(req, res, next) {
-  dbselect(sqlrecommend, function(result) {
-        console.log(result.rows);
-        var code = result.rows[0].code;
-        var name = result.rows[0].name;
-        console.log(code);
+    dbselect(sqlrecommend, function(result) {
         res.render('recommend', {
-            code: code,
-            name: name
+          rows:result.rows
         });
-  });
-
-
-
-
-
-
+    });
 });
 
 module.exports = router;
