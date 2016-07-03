@@ -11,8 +11,33 @@ block content
         th='名称'
         th='预测值'
       tbody
-        each row in rows
+        each row in rec
           tr
             td=row.code
             td=row.name
             td=row.predict
+
+  .page-header
+    h2= '统计值'
+  .row.placeholders
+    .col-xs-6.col-sm-3.placeholder
+      h4= '均值'
+      span.text-info=stas.p_mean
+    .col-xs-6.col-sm-3.placeholder
+      h4= '标准差'
+      span.text-info=stas.p_std
+    .col-xs-6.col-sm-3.placeholder
+      h4= '最小值'
+      span.text-info=stas.p_min
+    .col-xs-6.col-sm-3.placeholder
+      h4= '25分位值'
+      span.text-info=stas.p25
+    .col-xs-6.col-sm-3.placeholder
+      h4= '中位数'
+      span.text-info=stas.p50
+    .col-xs-6.col-sm-3.placeholder
+      h4= '75分位值'
+      span.text-info=stas.p75
+    .col-xs-6.col-sm-3.placeholder
+      h4= '最大值'
+      span.text-info=stas.p_max
