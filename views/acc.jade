@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  h1= '历史走势'
+  #test(style='width:100% ; height: 400px')
+  script(src="/javascripts/chart.js")
+
+  .page-header
+    h2= '统计值'
+  .row.placeholders
+    .col-xs-6.col-sm-3.placeholder
+      h4= '当前收益率'
+      span.text-info=2.000
+    .col-xs-6.col-sm-3.placeholder
+      h4= '当前准确率'
+      span.text-info=3.000
+    .col-xs-6.col-sm-3.placeholder
+      h4= '收益率最高'
+      span.text-info=3.0000
+    .col-xs-6.col-sm-3.placeholder
+      h4= '收益率最低'
+      span.text-info=4
+    .col-xs-6.col-sm-3.placeholder
+      h4= '准确率最高'
+      span.text-info=6
+    .col-xs-6.col-sm-3.placeholder
+      h4= '准确率最低'
+      span.text-info=7
