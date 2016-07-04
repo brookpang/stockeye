@@ -1,10 +1,29 @@
 extends layout
 
 block content
+  input#c_yearmonthday(type='hidden',value=c_yearmonthday)
+  input#h_p_change(type='hidden',value=h_p_change)
+  input#h_p_acc(type='hidden',value=h_p_acc)
   link(rel='stylesheet', href='/stylesheets/style.css')
   h1= '历史走势'
+   
   #test(style='width:100% ; height: 400px')
-  script(src="/javascripts/chart.js")
+  script(src="/javascripts/accchart.js")
+  script(type='text/javascript').
+    var c_yearmonthday=document.getElementById('c_yearmonthday').value;
+    var h_p_change=document.getElementById('h_p_change').value;
+    var h_p_acc=document.getElementById('h_p_acc').value;
+    var c_yearmonthday=c_yearmonthday.split(',');
+    var h_p_change=h_p_change.split(',');
+    var h_p_acc=h_p_acc.split(',');
+    var myChart = echarts.init(document.getElementById('test'));
+    option.xAxis.data = c_yearmonthday;
+    option.series[0].data = h_p_change;
+    option.series[1].data = h_p_acc;
+    myChart.setOption(option);
+    window.onresize = myChart.resize;
+
+
 
   .page-header
     h2= '统计值'
