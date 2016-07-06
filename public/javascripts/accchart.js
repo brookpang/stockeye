@@ -24,21 +24,22 @@ option = {
     xAxis: {
         type: 'category',
         boundaryGap: false,
+        scale: true,
         data: []
     },
-    yAxis:[{
+    yAxis: [{
         type: 'value',
+        scale: true,
         axisLabel: {
             formatter: '{value}'
         }
-      },
-      {
+    }, {
         type: 'value',
+        scale: true,
         axisLabel: {
-          formatter: '{value}'
+            formatter: '{value}'
         }
-      }
-    ],
+    }],
     series: [{
         name: '收益率',
         type: 'line',
@@ -62,7 +63,7 @@ option = {
         name: '准确率',
         type: 'line',
         data: [],
-      yAxisIndex: 1,
+        yAxisIndex: 1,
         markPoint: {
             data: [{
                 type: 'max',
@@ -80,6 +81,3 @@ option = {
         }
     }]
 };
-
-
-
