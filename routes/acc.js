@@ -7,7 +7,7 @@ var async = require('async');
 
 var getaccstats = function(callback) {
 
-    var sqlaccstatics = 'select  * from (select c_yearmonthday,round(h_p_change,3) h_p_change,round(h_p_acc,3) h_p_acc from acc2 order by c_yearmonthday desc limit 1) a,(select round(max(h_p_acc),3) as max_h_p_acc,round(min(h_p_acc),3) as min_h_p_acc,round(max(h_p_change),3) as max_h_p_change,round(min(h_p_change),3) as min_h_p_change from acc2) b';
+    var sqlaccstatics = 'select  * from (select c_yearmonthday,round(h_p_change,3) h_p_change,round(h_p_acc*100,1) h_p_acc from acc2 order by c_yearmonthday desc limit 1) a,(select round(max(h_p_acc*100),1) as max_h_p_acc,round(min(h_p_acc*100),1) as min_h_p_acc,round(max(h_p_change),3) as max_h_p_change,round(min(h_p_change),3) as min_h_p_change from acc2) b';
     // var accstas ='';
     dbselect(sqlaccstatics, function(result) {
         var accstas = result.rows[0];
@@ -21,7 +21,7 @@ var getaccstats = function(callback) {
 // c_yearmonthday = new Array();
 
 var getacc = function(accstas, callback2) {
-    var sqlacc = 'select c_yearmonthday,round(h_p_acc,3)*100 h_p_acc,round(h_p_change,3) h_p_change from acc2 order by c_yearmonthday';
+    var sqlacc = 'select c_yearmonthday,round(h_p_acc*100,3) h_p_acc,round(h_p_change,3) h_p_change from acc2 order by c_yearmonthday';
     dbselect(sqlacc, function(result) {
         var accrows = result.rows;
         var c_yearmonthday = new Array(),
