@@ -1,8 +1,8 @@
 var pg = require('pg');
 
-var config = require('../conf/conf.js')
+var config = require('../conf/conf.js');
 var Pool = pg.Pool;
-var pool = new Pool(config)
+var pool = new Pool(config);
 
 
 var _select = function(sqlstring, callback) {

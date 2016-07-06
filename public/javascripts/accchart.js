@@ -26,12 +26,19 @@ option = {
         boundaryGap: false,
         data: []
     },
-    yAxis: {
+    yAxis:[{
         type: 'value',
         axisLabel: {
             formatter: '{value}'
         }
-    },
+      },
+      {
+        type: 'value',
+        axisLabel: {
+          formatter: '{value}'
+        }
+      }
+    ],
     series: [{
         name: '收益率',
         type: 'line',
@@ -55,6 +62,7 @@ option = {
         name: '准确率',
         type: 'line',
         data: [],
+      yAxisIndex: 1,
         markPoint: {
             data: [{
                 type: 'max',
